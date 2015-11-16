@@ -10,8 +10,8 @@
 	<header>
 		<script src="events.js"></script>
 		<input name="search" id="searchBox" value="Search">
-		<a onClick="showRegBox()">register</a>
-		<a onClick="showLoginBox()">login</a>
+		<a onclick="showRegBox()">register</a>
+		<a onclick="showLoginBox()">login</a>
 	</header>
 	<div id="loginBox" class="hover">
 		<form>
@@ -28,10 +28,10 @@
 			<p><input type="button" value="Join Now!"/></p>
 		</form>
 	</div>
-	<div id="mask" class="hover mask" onClick="fadeAll()"></div>
+	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
 	<div id="contentContainer">
 		<div class="column">
-			<div class="contentBox s1" onClick="showDetail(this)"></div>
+			<div class="contentBox s1" onclick="showDetail(this)"></div>
 			<div class="contentBox s3"></div>
 			<div class="contentBox s2"></div>
 		</div>
@@ -55,7 +55,7 @@
 			<div class="contentBox s1"></div>
 			<div class="contentBox s3"></div>
 		</div>
-		<img src="add.png" id="addButton" onClick="showAddBox()"/>
+		<img src="add.png" id="addButton" onclick="showAddBox()"/>
 	</div>
 	<div id="addBox" class="hover" style="width:700px;">
 		<form id="addForm">
@@ -77,6 +77,6 @@
 	<div id="detailBox" class="hover">
 		<div id="detailData"></div>
 	</div>
-	<img src="close.png" style="position:fixed;top:2em;right: 0;height: 4em;width: 4em;display: none;" id="close" class="hover mask" onClick="fadeAll()">
+	<img src="close.png" style="position:fixed;top:2em;right: 0;height: 4em;width: 4em;display: none;" id="close" class="hover mask" onclick="fadeAll()">
 </body>
 </html>
