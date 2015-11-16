@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>main_page</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="jquery-2.1.4.js"></script>
 </head>
 <body>
 	<header>
@@ -12,14 +13,14 @@
 		<a onclick="showRegBox()">register</a>
 		<a onclick="showLoginBox()">login</a>
 	</header>
-	<div id="loginBox">
+	<div id="loginBox" class="hover">
 		<form>
 			<p>用户名<input name="handle"/></p>
 			<p>密码&emsp;<input type="password" name="passwd"/></p>
 			<p><input type="button" value="Login!"/></p>
 		</form>
 	</div>
-	<div id="regBox">
+	<div id="regBox" class="hover">
 		<form>
 			<p>用户名&emsp;<input name="handle"/></p>
 			<p>密码&emsp;&emsp;<input type="password" name="passwd"/></p>
@@ -27,7 +28,7 @@
 			<p><input type="button" value="Join Now!"/></p>
 		</form>
 	</div>
-	<div id="mask" onclick="fadeAll()"></div>
+	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
 	<div id="contentContainer">
 		<div class="column">
 			<div class="contentBox s1" onclick="showDetail(this)"></div>
@@ -56,16 +57,17 @@
 		</div>
 		<img src="add.bmp" id="addButton" onclick="showAddBox()"/>
 	</div>
-	<div id="addBox">
+	<div id="addBox" class="hover">
 		<form id="addForm">
 			<p><input type="file" name="pic"></p>
 			<p><textarea name="texts" form="addForm"></textarea></p>
 			<p><input type="button" name="submit" value="submit"/></p>
 		</form>
 	</div>
-	<div id="detailMask"></div>
-	<div id="detailBox">
+	<div id="detailMask" class="hover"></div>
+	<div id="detailBox" class="hover">
 		<div id="detailData"></div>
 	</div>
+	<img src="close.bmp" style="position:fixed;top:2em;right: 0;height: 2em;width: 2em;display: none;" id="close" class="hover mask" onclick="fadeAll()">
 </body>
 </html>
