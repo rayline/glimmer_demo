@@ -34,5 +34,9 @@ function maintainSearchHint(){
 //document ready function
 $(document).ready(function(){
     maintainSearchHint();
+    resizeMain();
+})
 
+$(window).resize(function(){
+    resizeMain();
 })

@@ -57,10 +57,17 @@ header a{
 	height: auto;
 	overflow: hidden;
 }
+#columnContainer{
+	background-color: darkviolet;
+	margin-left:10%;
+	width:auto;
+	height: auto;
+	overflow: hidden;
+}
 .column{
 	background: aqua;
-	width: 10em;
-	margin-left: 1%;
+	width: 160px;
+	margin-left: 5px;
 	float: left;
 	height: auto;
 	overflow: hidden;
