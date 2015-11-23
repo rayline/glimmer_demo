@@ -25,7 +25,7 @@ body a{
 }
 .logo{
 	float:left;
-	margin-top:22px;
+	margin-top:7px;
 }
 ul.shopping_grid{
 	padding:0;
@@ -36,10 +36,10 @@ ul.shopping_grid{
 ul.shopping_grid li{
 	float: left;
 	background: #eee;
-	padding: 25px 20px 0;
+	padding: 15px 20px 0;
 	border-right: 1px solid #f7f7f7;
 	font: 600 15px/15px 'Lato', sans-serif;
-	min-height: 70px;
+	min-height: 50px;
 	color:#000;
 }
 ul.shopping_grid li img{
@@ -1819,7 +1819,7 @@ ul.nav {
 }
 @media(max-width:640px){
 .logo {
-	margin-top:7px;
+	margin-top:5px;
 }
 ul.shopping_grid li {
 	padding: 10px 5px 0;
