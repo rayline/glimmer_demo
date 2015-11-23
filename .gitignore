@@ -1,5 +1,2 @@
-<<<<<<< HEAD
-.idea/
-=======
-.idea/
->>>>>>> origin/master
+.idea/*
+.idea/workspace.xml
