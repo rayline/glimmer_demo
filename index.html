@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script src="jquery-2.1.4.js"></script>
     <script src="events.js"></script>
+	<script src="waterfall.js"></script>
     <title>Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,18 +17,13 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <!-- Custom Theme files -->
     <!--webfont-->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/responsiveslides.min.js"></script>
-    <script>
-</script>
-<script type="text/javascript" src="js/hover_pack.js"></script>
 </head>
 <body>
 <div class="header" style="z-index: 999;">
 	<div class="header_top">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" height="49" alt=""/></a>
+				<a href="index.html"><img src="images/logo.png" height="40" alt=""/></a>
 			</div>
 			<ul class="shopping_grid">
 			      <li>Join Us</li>
@@ -44,43 +40,18 @@
 	<div class="search">
 	  <div class="stay">Search</div>
 	  <div class="stay_right">
-		  <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+		  <input class="searchInput" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 		  <input type="submit" value="">
 	  </div>
 	  <div class="clearfix"> </div>
 	</div>
+	  <div class="searchHint" style="height: 2em;background: white;position: fixed">
+	  </div>
     <div class="clearfix"> </div>
   </div>
 </div>
 	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
-	<div id="contentContainer">
-		<div class="column">
-			<div class="contentBox s1" onclick="showDetail(this)"></div>
-			<div class="contentBox s3"></div>
-			<div class="contentBox s2"></div>
-		</div>
-		<div class="column">
-			<div class="contentBox s4"></div>
-			<div class="contentBox s2"></div>
-		</div>
-		<div class="column">
-			<div class="contentBox s1"></div>
-			<div class="contentBox s4"></div>
-			<div class="contentBox s2"></div>
-			<div class="contentBox s2"></div>
-		</div>
-		<div class="column">
-			<div class="contentBox s4"></div>
-		</div>
-		<div class="column">
-			<div class="contentBox s1"></div>
-			<div class="contentBox s2"></div>
-			<div class="contentBox s4"></div>
-			<div class="contentBox s1"></div>
-			<div class="contentBox s3"></div>
-		</div>
-		<img src="add.png" id="addButton" onclick="showAddBox()"/>
-	</div>
+<div id="columnContainer"></div>
 	<div id="addBox" class="hover">
 		<form id="addForm">
 			<p><input type="file" name="pic"></p>

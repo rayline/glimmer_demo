@@ -23,3 +23,30 @@ function showDetail(clicker){
     $("#detailBox").show(1000);
     $("#detailData").css("background",window.getComputedStyle(clicker).background);
 }
+
+function maintainSearchHint(){
+    $(".searchHint").width($(".SearchInput").css("width")+$(".SearchInput").css("padding-left")+$(".SearchInput").css("padding-right"));
+    pos = $(".stay_right").offset();
+    $(".searchHint").css("top", pos.top+$(".stay_right").height());
+    $(".searchHint").css("left", pos.left);
+}
+
+//document ready function
+$(document).ready(function(){
+
+    maintainSearchHint();
+    resizeMain();
+})
+
+$(window).resize(function(){
+    resizeMain();
+})
+
+$(window).scroll(function(){
+    $(".column").each(function(index, element){
+        while($(element).height()+$(element).offset().top<$(document).scrollTop()+document.documentElement.clientHeight){
+                rd = Math.floor(Math.random()*3);
+                $(element).append(contentPreset[rd]);
+        }
+    })
+})
