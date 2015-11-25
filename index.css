@@ -77,14 +77,12 @@ header a{
 	overflow: hidden;
 }
 #columnContainer{
-	background-color: darkviolet;
 	margin-left:10%;
 	width:auto;
 	height: auto;
 	overflow: hidden;
 }
 .column{
-	background: aqua;
 	width: 160px;
 	margin-left: 5px;
 	float: left;
@@ -165,20 +163,20 @@ header a{
 }
 #detailBox img{
 	position: absolute;
-	vertical-align:center;
+	vertical-align:central;
 	
 	overflow: hidden;
 	background: white;
 	
 }
-#detailData{
+#detailData {
 	margin: 5em auto;
 	width: 80%;
 	height: 60em;
+}
 .insideImg{
 	margin-bottom: 5px;
 	border-radius: 6px;
-}	background: #F7EED6;
 }
 #detailtext{
 	font-size:30px;
