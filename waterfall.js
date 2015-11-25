@@ -25,4 +25,9 @@ function resizeMain(){
         $(".column"+presentCnt).remove();
         presentCnt--;
     }
+    $(".insideImg").click(function (){
+        $("#comment1").hide(0);
+        $("#detailBox").show(1000);
+        $("#mask2").fadeIn(1000);
+    })
 }
