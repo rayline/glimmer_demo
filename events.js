@@ -30,27 +30,10 @@ function maintainSearchHint(){
     $(".searchHint").css("top", pos.top+$(".stay_right").height());
     $(".searchHint").css("left", pos.left);
 }
-function ShowAddCommentBox(event){
-	var x=event.screenX,y=event.screenY;
-	SetCommentBoxPosition(x,y);
-	$("#comment1").hide(10);
-	document.getElementById("CommentBox").style.left=x+100+"px";
-	document.getElementById("CommentBox").style.top=y+"px";
-	$("#CommentBox").show(1000);
-    $("#mask3").fadeIn(1000);
-	}
-function SetCommentBoxPosition(x,y){
-	
-	document.getElementById("comment1").style.left=x+"px";
-	document.getElementById("comment1").style.top=y+"px";
-	}
-function ShowComment(){
-	$(".comhover").fadeOut(1000);
-	document.getElementById("comment1").innerHTML=document.getElementById("comment").value;
-	$("#comment1").show(10);
-	}
+
 //document ready function
 $(document).ready(function(){
+
     maintainSearchHint();
     resizeMain();
 })
