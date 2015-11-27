@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>main_page</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="jquery-2.1.4.js"></script>
+	<script src="waterfall.js"></script>
+    <script src="events.js"></script>
+    <title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+</script>
+<script type="text/javascript" src="js/hover_pack.js"></script>
+</head>
+<body>
+<div class="header" style="z-index: 999;">
+	<div class="header_top">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" height="40" alt=""/></a>
+			</div>
+			<ul class="shopping_grid">
+			      <li>Join Us</li>
+			      <li onclick="showLoginBox()">Sign In</li>
+			      <li><span class="m_1">My Account</span>&nbsp;&nbsp;</li>
+			      <div class="clearfix"> </div>
+			</ul>
+		    <div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="column_center" style="z-index: 999;">
+  <div class="container">
+	<div class="search">
+	  <div class="stay">Search</div>
+	  <div class="stay_right">
+		  <input class="searchInput" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+		  <input type="submit" value="">
+	  </div>
+	  <div class="clearfix"> </div>
+	</div>
+	  <div class="searchHint" style="height: 2em;background: white;position: fixed">
+	  </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>
+	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
+    <div id="mask2" class="hover mask" onclick="ShowAddCommentBox(event)"></div>
+    <div id="mask3" class="comhover mask" onclick="fadeComment()"></div>
+<div id="columnContainer"></div>
+	<div id="addBox" class="hover">
+		<form id="addForm">
+			<p><input type="file" name="pic"></p>
+			<p><textarea name="texts" form="addForm"></textarea></p>
+			<p><input type="button" name="submit" value="submit" /></p>
+		</form>
+	</div>
+    <div id="comment1" class="hover">
+        hell0!;
+        </div>
+	<div id="detailMask" class="hover"></div>
+     
+	<div id="detailBox" class="hover">
+       
+		<div id="detailData">
+        <div id="detailpic">
+        <img  src="images/dbw.jpg"></div>
+        <div id="detailtext">
+        仰哲兄好帅</div>
+        <div id="detailbutton">
+        <input type="button" value="返回" onclick="fadeAll()">
+        </div>
+        </div>
+	</div>
+    <div id="CommentBox" class="comhover" >
+      <div id="commentbox_text">
+       <textarea rows="10" cols="30" id="comment">
+       </textarea>
+       </div>
+       
+       <div id="commentbox_button">
+       <input type="submit" value="提交评论" onclick="ShowComment()">
+       </div>
+    </div>
+	<img src="close.png" style="position:fixed;top:2em;right: 0;height: 2em;width: 2em;display: none;" id="close" class="hover mask" onclick="fadeAll()">
+</body>
+</html>
