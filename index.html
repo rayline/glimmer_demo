@@ -45,19 +45,19 @@
 	<div class="search">
 	  <div class="stay">Search</div>
 	  <div class="stay_right">
-		  <input class="searchInput" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-		  <input type="submit" value="">
+		  <input id="searchInput" class="searchInput" type="text" value="" onfocus="addHint(this)" autocomplete="off">
+		  <input type="submit" value="" onclick="applySearch()">
 	  </div>
 	  <div class="clearfix"> </div>
 	</div>
-	  <div class="searchHint" style="height: 2em;background: white;position: fixed">
+	  <div class="searchHint" style=" background: white;position: fixed">
 	  </div>
     <div class="clearfix"> </div>
   </div>
 </div>
 	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
     <div id="mask2" class="hover mask" onclick="ShowAddCommentBox(event)"></div>
-    <div id="mask3" class="comhover mask" onclick="fadeAll()"></div>
+    <div id="mask3" class="comhover mask" onclick="fadeComment()"></div>
 <div id="columnContainer"></div>
 	<div id="addBox" class="hover">
 		<form id="addForm">
@@ -85,7 +85,7 @@
 	</div>
     <div id="CommentBox" class="comhover" >
       <div id="commentbox_text">
-       <textarea rows="10" cols="20" id="comment">
+       <textarea rows="10" cols="30" id="comment">
        </textarea>
        </div>
        

@@ -152,7 +152,7 @@ header a{
 }
 #detailBox{
 	display: none;
-	position: absolute;
+	position: fixed;
 	margin-left: 20%;
 	height: auto;
 	width: 60%;
@@ -203,6 +203,16 @@ header a{
 	z-index:1002;
 	background:white;
 	position:absolute;
+=======
+	width:400px;
+	height:400px;
+	
+	}
+.comment{
+	z-index:1011;
+	background-color:white;
+	position:absolute;
+	border:1px red solid;
 	display:none;
 	}
 #detailbutton{
@@ -214,8 +224,12 @@ header a{
 	text-align:center;
 	padding-top:10px;
 	width:600px;
+	width:400px;
 	}
 #commentbox_button{
 	margin:0px auto 0px;
 	float:right;
 	}
+.hint:hover{
+	background: grey;
+}
