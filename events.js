@@ -42,49 +42,32 @@ function maintainSearchHint(){
     $(".searchHint").css("left", pos.left);
 }
 function ShowAddCommentBox(event){
-	var x=event.screenX,y=event.screenY;
-	SetCommentBoxPosition(x,y);
-	$("#comment1").hide(10);
-	document.getElementById("CommentBox").style.left=x+100+"px";
-	document.getElementById("CommentBox").style.top=y+"px";
-	$("#CommentBox").show(1000);
-    $("#mask3").fadeIn(1000);
-	}
-function SetCommentBoxPosition(x,y){
-	
-	document.getElementById("comment1").style.left=x+"px";
-	document.getElementById("comment1").style.top=y+"px";
-	}
-function ShowComment(){
-	$(".comhover").fadeOut(1000);
-	document.getElementById("comment1").innerHTML=document.getElementById("comment").value;
-	$("#comment1").show(10);
+	var x=event.clientX+document.body.scrollLeft,y=event.clientY+document.body.scrollTop;
 	CommentNum=CommentNum+1;
 	CreateComment(x,y);
-	$("#CommentBox").show(1000);
-    $("#mask3").fadeIn(1000);
-	}
+	$("#CommentBox").slideDown(1000);
+	$("#mask3").fadeIn(1000);
+}
 function CreateComment(x,y){
 	var idname="comment"+CommentNum;
 	var m="<div id='"+idname+"'></div>";
 	$("body").append(m);
 	$("#"+idname).addClass("comment");
 	$("#"+idname).addClass("hover");
-	y=y-50;
 	$("#"+idname).css("top",y+"px");
 	$("#"+idname).css("left",x+"px");
-	x=x+160;
-	y=y+160;
+	y=y+243;
+	x=x+320;
 	document.getElementById("CommentBox").style.top=y+"px";
 	document.getElementById("CommentBox").style.left=x+"px";
-	
-	}
+
+}
 function ShowComment(){
 	$(".comhover").fadeOut(1000);
 	var idname="comment"+CommentNum;
 	document.getElementById(idname).innerHTML=document.getElementById("comment").value;
 	$("#"+idname).show(10);
-	}
+}
 //document ready function
 $(document).ready(function(){
     maintainSearchHint();

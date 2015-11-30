@@ -17,7 +17,7 @@ function resizeMain() {
     var wid;
     wid = $("body").width();
     var cnt;
-    cnt = Math.floor(wid * 0.95 / 200);
+    cnt = Math.floor(wid * 0.80 / 200);
     $("#columnContainer").css("margin-left", (wid - cnt * 200) / 2);
     var rd;
     while (cnt > presentCnt) {
