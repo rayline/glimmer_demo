@@ -152,12 +152,12 @@ header a{
 }
 #detailBox{
 	display: none;
-	position: fixed;
+	position: absolute;
 	margin-left: 20%;
 	height: auto;
 	width: 60%;
 	overflow: hidden;
-	background: aquamarine;
+	/*background: aquamarine;*/
 	top: 2em;
 	z-index:1002;
 }
@@ -178,11 +178,6 @@ header a{
 	margin-bottom: 5px;
 	border-radius: 6px;
 }
-#detailtext{
-	font-size:30px;
-	font-weight:bold;
-	text-align:center;
-	}
 #detailpic{
 	height:450px;
 	width:300px;
@@ -232,4 +227,12 @@ header a{
 	}
 .hint:hover{
 	background: grey;
+}
+
+.form-sign-in{
+	width:20em;
+	margin: auto;
+}
+.form-sign-in.btn{
+	float: right;
 }

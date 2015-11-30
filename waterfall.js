@@ -11,39 +11,43 @@ contentPreset[2] = "<img src='images/dbw.jpg' width='100%' height='370px' class=
 
 var search ="";
 
+var searchResult = new Array();
+
 function resizeMain() {
-    var wid = $("body").width();
-    var cnt = Math.floor(wid * 0.95 / 165);
+    var wid;
+    wid = $("body").width();
+    var cnt;
+    cnt = Math.floor(wid * 0.95 / 165);
     $("#columnContainer").css("margin-left", (wid - cnt * 165) / 2);
+    var rd;
     while (cnt > presentCnt) {
         presentCnt++;
         $("#columnContainer").append("<div class='column column" + presentCnt + "'></div>");
-        for (var i = 1; i <= 10; i++) {
-            times = 0;
-            rd = Math.floor(Math.random() * contentPreset.length);;
-            while(contentPreset[rd].search(search)==-1&&times<=10){
-                rd = Math.floor(Math.random() * contentPreset.length);
-                times++;
-            }
-            if(times<=10)$(".column" + presentCnt).append(contentPreset[rd]);
+        for(i=1;i<=10;i++){
+            rd = Math.floor(Math.random() * searchResult.length);
+            $(".column" + presentCnt).append(searchResult[rd]);
         }
     }
     while (cnt < presentCnt) {
-        $(".column" + presentCnt).remove();
-        contentPreset[0] = "<img src='images/szt.jpg' width='100%' height='300px' class='insideImg'>";
-        contentPreset[1] = "<img src='images/xyz.jpg' width='100%' height='250px' class='insideImg'>";
-        contentPreset[2] = "<img src='images/dbw.jpg' width='100%' height='370px' class='insideImg'>";
+        $(".column"+presentCnt).remove();
+        presentCnt--;
     }
     $(".insideImg").click(function (){
         $("#comment1").hide(0);
-        $("#detailBox").show(1000);
-        $("#mask2").fadeIn(1000);
+        $("#detailBox").slideDown(1000);
+        $("#mask2").fadeIn(100);
     })
 }
 
 
 function applySearch(){
     search = $("#searchInput").val();
+    searchResult.length=0;
+    for(var i=0;i<contentPreset.length;i++){
+        if(contentPreset[i].search(search)!=-1){
+            searchResult.push(contentPreset[i]);
+        }
+    }
     $(".column").remove();
     presentCnt=0;
     resizeMain();

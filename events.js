@@ -36,9 +36,9 @@ function showDetail(clicker){
 }
 
 function maintainSearchHint(){
-    $(".searchHint").width(pxtonum($(".searchInput").css("width"))+pxtonum($(".searchInput").css("padding-left")));
-    pos = $(".stay_right").offset();
-    $(".searchHint").css("top", pos.top+$(".stay_right").height());
+    $(".searchHint").width(pxtonum($("#searchInput").css("width"))+pxtonum($("#searchInput").css("padding-left")));
+    pos = $("#searchInput").offset();
+    $(".searchHint").css("top", pos.top+$("#searchInput").height());
     $(".searchHint").css("left", pos.left);
 }
 function ShowAddCommentBox(event){
@@ -88,14 +88,18 @@ function ShowComment(){
 //document ready function
 $(document).ready(function(){
     maintainSearchHint();
-    resizeMain();
+
+});
+
+function startmain(){
+
+	resizeMain();
 	$("#searchInput").on("blur",function(){$(".hint").remove()});
 
 	$("#searchInput").on("change keyup paste",function(){
 		addHint(this);
 	});
-
-});
+}
 
 $(window).resize(function(){
 	maintainSearchHint();
@@ -105,15 +109,10 @@ $(window).resize(function(){
 $(window).scroll(function(){
     $(".column").each(function(index, element){
         while($(element).height()+$(element).offset().top<$(document).scrollTop()+document.documentElement.clientHeight){
-			times = 0;
-			rd = Math.floor(Math.random()*contentPreset.length);
-				while(contentPreset[rd].search(search)==-1&&times<=10){
-					rd = Math.floor(Math.random()*contentPreset.length);
-					times++;
-				}
-				if(times<=10)$(element).append(contentPreset[rd]);
+			rd = Math.floor(Math.random()*searchResult.length);
+				$(element).append(searchResult[rd]);
         }
-    })
+    });
 	$(".insideImg").click(function (){
 		$("#comment1").hide(0);
 		$("#detailBox").show(1000);
