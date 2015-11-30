@@ -41,12 +41,20 @@ function maintainSearchHint(){
     $(".searchHint").css("top", pos.top+$("#searchInput").height());
     $(".searchHint").css("left", pos.left);
 }
+
 function ShowAddCommentBox(event){
 	var x=event.clientX+document.body.scrollLeft,y=event.clientY+document.body.scrollTop;
-	CommentNum=CommentNum+1;
-	CreateComment(x,y);
-	$("#CommentBox").slideDown(1000);
-	$("#mask3").fadeIn(1000);
+	var divleft=$("#detailBox").offset().left;
+	var divlen=$("#detailBox").length;
+	if (x<=divleft){
+		CommentNum=CommentNum+1;
+		CreateComment(x,y);
+		$("#CommentBox").slideDown(1000);
+		$("#mask3").fadeIn(1000);
+	}
+	if (x>=divleft+divlen){
+		fadeAll();
+	}
 }
 function CreateComment(x,y){
 	var idname="comment"+CommentNum;
@@ -56,8 +64,8 @@ function CreateComment(x,y){
 	$("#"+idname).addClass("hover");
 	$("#"+idname).css("top",y+"px");
 	$("#"+idname).css("left",x+"px");
-	y=y+243;
-	x=x+320;
+	y=y+220;
+	x=x+280;
 	document.getElementById("CommentBox").style.top=y+"px";
 	document.getElementById("CommentBox").style.left=x+"px";
 
@@ -71,7 +79,9 @@ function ShowComment(){
 //document ready function
 $(document).ready(function(){
     maintainSearchHint();
-
+	$(function () {
+		$('[data-toggle="popover"]').popover()
+	});
 });
 
 function startmain(){

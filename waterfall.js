@@ -33,7 +33,9 @@ function resizeMain() {
         presentCnt--;
     }
     $(".insideImg").click(function (){
-        $("#comment1").hide(0);
+        var y=$(document).scrollTop();
+        $("#detailBox").css("top",y+"px");
+        $("#detailBox").css("left",150+"px");
         $("#detailBox").slideDown(1000);
         $("#mask2").fadeIn(100);
     })

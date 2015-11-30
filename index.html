@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:margin-top="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
 <body>
 <div id="initMask" style="background-color:gray;z-index:1024;width:100%;height:100%;position:fixed;top:0;left:0;text-align:center;">
 	<script src="login.js"></script>
-	<div id="initLogin" class="form-sign-in">
+	<div id="initLogin" class="form-sign-in" style="margin-top: 10em">
 
 	<h1>Enter Glimmer</h1>
 	<h3>
@@ -37,7 +37,26 @@
 		<input type="password" id="pass-a" class="form-control" placeholder="password">
 		<button type="button" class="btn btn-primary" onclick="tryLogin()">Enter</button>
 	</form>
-</div>
+	</div>
+	<div id="secondLogin" style="display: none">
+		<div class="form-sign-in" style="width:70%; margin-top: 10%">
+			<span style="float: left;width:30%;">
+				<h2>New to glimmer?</h2>
+				<h3>Confirm your password to get an account</h3>
+				<input id="pass-b" type="password" placeholder="Confirm Password" class="form-control" style="width:50%;">
+				<button class="btn btn-default" type="button" onclick="register()">Confirm</button>
+			</span>
+			<span style="float:right;width:30%">
+				<h2>Or just got it wrong?</h2>
+				<h3>Then check it out</h3>
+				<form>
+					<input type="email" id="email-b" class="form-control" placeholder="Email">
+					<input type="password" id="pass-c" class="form-control" placeholder="password">
+					<button type="button" class="btn btn-primary" onclick="tryLogin()">Enter</button>
+				</form>
+			</span>
+		</div>
+	</div>
 </div>
 <header class="navbar navbar-default navbar-fixed-top" style="z-index: 999;">
 	<div class="container-fluid">
@@ -49,7 +68,7 @@
 			<button class="btn btn-default navbar-btn navbar-left"  onclick="applySearch()">Search</button>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Account <span class="sr-only">(current)</span></a></li>
+					<li class="active"><a href="#" id="account" data-placement="bottom" data-toggle="popover" data-trigger="focus" title="Confirm mail sent!" data-content="Get confirmed to let us know more about you, and then you get the account permanently.Account live for 24h from now on" onblur="$('#account').popover('destroy')">Account <span class="sr-only">(current)</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -74,10 +93,7 @@
         <div id="detailpic">
         <img  src="images/dbw.jpg"></div>
         <h1>
-        仰哲兄好帅</h1>>
-        <div id="detailbutton">
-        <input type="button" value="返回" onclick="fadeAll()">
-        </div>
+        仰哲兄好帅</h1>
         </div>
 	</div>
     <div id="CommentBox" class="comhover" >
