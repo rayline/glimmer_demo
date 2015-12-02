@@ -35,6 +35,29 @@ function showDetail(clicker){
     $("#detailData").css("background",window.getComputedStyle(clicker).background);
 }
 
+var file = "";
+
+function upload(){
+	file = $("#pictureupload").val();
+	//alert(file);
+	var pos = file.lastIndexOf("\\");
+	file = file.slice(pos+1,file.length);
+	//$("#pictureupload").after("<img src='"+file.slice(pos,file.length)+"' width='300' height='400'>");
+	//$("#pictureupload").after("<img src='add.png' width='300' height='400'>");
+	$("#pic").show(0);
+}
+
+function addContent(){
+	$(".column1 .insideImg").animate({
+		top : "+=130"
+	},400);
+	$(".column1").prepend("<div class='insideImg' id='toShow' style='display: none' height='150px'><img src="+ file +" width='100%' height='100px'>"+ $("#message-text").val()+"</div>");
+	$("#toShow").fadeIn({
+		duration : 600,
+		queue : true
+	});
+}
+
 function maintainSearchHint(){
     $(".searchHint").width(pxtonum($("#searchInput").css("width"))+pxtonum($("#searchInput").css("padding-left")));
     pos = $("#searchInput").offset();

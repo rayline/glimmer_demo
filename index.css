@@ -177,6 +177,8 @@ header a{
 .insideImg{
 	margin-bottom: 5px;
 	border-radius: 6px;
+	position: relative;
+	top:4em;
 }
 #detailpic{
 	height:450px;

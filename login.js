@@ -25,6 +25,7 @@ function tryLogin(){
 function register(){
     if($("#pass-a").val()!=$("#pass-b").val()) return;
     $("#account").text($("#email-a").val());
-    $("#initMask").slideUp(300);
+    $("#initMask").slideUp(500);
     $("#account").focus();
+    $("#msgModal").modal();
 }
