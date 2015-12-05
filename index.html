@@ -1,68 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:margin-top="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>main_page</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script src="jquery-2.1.4.js"></script>
-    <script src="events.js"></script>
 	<script src="waterfall.js"></script>
+    <script src="events.js"></script>
     <title>Home</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <!--<link href="css/style.css" rel="stylesheet" type="text/css" />   no using for reasons-->
     <!-- Custom Theme files -->
     <!--webfont-->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+</script>
+<script type="text/javascript" src="js/hover_pack.js"></script>
 </head>
 <body>
-<div class="header" style="z-index: 999;">
-	<div class="header_top">
-		<div class="container">
-			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" height="40" alt=""/></a>
-			</div>
-			<ul class="shopping_grid">
-			      <li>Join Us</li>
-			      <li onclick="showLoginBox()">Sign In</li>
-			      <li><span class="m_1">My Account</span>&nbsp;&nbsp;</li>
-			      <div class="clearfix"> </div>
-			</ul>
-		    <div class="clearfix"> </div>
+<div id="initMask" style="background:url('images/loginBackground.jpg');z-index:1024;width:100%;height:100%;position:fixed;top:0;left:0;text-align:center;">
+	<script src="login.js"></script>
+	<div id="initLogin" class="form-sign-in" style="margin-top: 10em;color:white;">
+
+	<h1>Enter Glimmer</h1>
+	<h3>
+		Login if you have an account.
+	</h3>
+	<h3>
+		Or just type the desired account below.
+	</h3>
+	<form>
+		<input type="email" id="email-a" class="dbw_form" placeholder="Email" onfocus="if(value=='Email'){this.style.color='#fff';value=''}" onblur="if(value==''){this.style.color='#999';value='Email'}" ></br></br>
+		<input type="password" id="pass-a" class="dbw_form" placeholder="password" onfocus="if(value=='password'){this.style.color='#fff';value=''}" onblur="if(value==''){this.style.color='#999';value='password'}"></br></br>
+		<button id="input_01" type="button" class="btn btn-primary" onclick="tryLogin()">Enter</button>
+	</form>
+	</div>
+	<div id="secondLogin" style="display: none">
+		<div class="form-sign-in" style="width:70%; margin-top: 10%">
+			<span style="float: left;width:30%;">
+				<h2>New to glimmer?</h2>
+				<h3>Confirm your password to get an account</h3>
+				<input id="pass-b" type="password" placeholder="Confirm Password" class="form-control" style="width:50%;">
+				<button class="btn btn-default" type="button" onclick="register()">Confirm</button>
+			</span>
+			<span style="float:right;width:30%">
+				<h2>Or just got it wrong?</h2>
+				<h3>Then check it out</h3>
+				<form>
+					<input type="email" id="email-b" class="form-control" placeholder="Email">
+					<input type="password" id="pass-c" class="form-control" placeholder="password">
+					<button type="button" class="btn btn-primary" onclick="tryLogin()">Enter</button>
+				</form>
+			</span>
 		</div>
 	</div>
 </div>
-<div class="column_center" style="z-index: 999;">
-  <div class="container">
-	<div class="search">
-	  <div class="stay">Search</div>
-	  <div class="stay_right">
-		  <input class="searchInput" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-		  <input type="submit" value="">
-	  </div>
-	  <div class="clearfix"> </div>
+<header class="navbar navbar-default navbar-fixed-top" style="z-index: 999;">
+	<div class="container-fluid">
+		<div class="navbar-header" style="width:100%;">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/logo.png" alt="Glimmer" height="200%" style="position: relative; bottom: 30%;">
+			</a>
+			<input type="text" class="form-control navbar-form navbar-left" placeholder="search" id="searchInput" size="40" style="margin-left: 10%" autocomplete="off"/>
+			<button class="btn btn-default navbar-btn navbar-left"  onclick="applySearch()">Search</button>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#" id="account" data-placement="bottom" data-toggle="popover" data-trigger="focus" title="Confirm mail sent!" data-content="Get confirmed to let us know more about you, and then you get the account permanently.Account live for 24h from now on" onblur="$('#account').popover('destroy')">Account <span class="sr-only">(current)</span></a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	  <div class="searchHint" style="height: 2em;background: white;position: fixed">
-	  </div>
-    <div class="clearfix"> </div>
-  </div>
-</div>
+</header>
 	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
+    <div id="mask2" class="hover mask" onclick="ShowAddCommentBox(event)"></div>
+    <div id="mask3" class="comhover mask" onclick="fadeComment()"></div>
 <div id="columnContainer"></div>
 	<div id="addBox" class="hover">
 		<form id="addForm">
 			<p><input type="file" name="pic"></p>
 			<p><textarea name="texts" form="addForm"></textarea></p>
-			<p><input type="button" name="submit" value="submit"/></p>
+			<p><input type="button" name="submit" value="submit" /></p>
 		</form>
 	</div>
 	<div id="detailMask" class="hover"></div>
-	<div id="detailBox" class="hover">
-		<div id="detailData"></div>
+     
+	<div id="detailBox" class="hover jumbotron">
+       
+		<div id="detailData">
+        <div id="detailpic">
+        <img  src="images/dbw.jpg"></div>
+        <h1>
+        仰哲兄好帅</h1>
+        </div>
 	</div>
+    <div id="CommentBox" class="comhover" >
+      <div id="commentbox_text">
+       <textarea rows="10" cols="30" id="comment">
+       </textarea>
+       </div>
+       
+       <div id="commentbox_button">
+       <input type="submit" value="提交评论" onclick="ShowComment()">
+       </div>
+    </div>
 	<img src="close.png" style="position:fixed;top:2em;right: 0;height: 2em;width: 2em;display: none;" id="close" class="hover mask" onclick="fadeAll()">
 </body>
 </html>
