@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:margin-top="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>main_page</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="contextMenu/jquery.contextMenu.css">
 	<script src="jquery-2.1.4.js"></script>
 	<script src="waterfall.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
     <script src="events.js"></script>
     <title>Home</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -16,11 +18,10 @@
     <!-- Custom Theme files -->
     <!--webfont-->
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-    <script>
-</script>
-<script type="text/javascript" src="js/hover_pack.js"></script>
+	<script type="text/javascript" src="contextMenu/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="contextMenu/jquery.contextMenu.js"></script>
 </head>
-<body>
+<body style="background: #c8c8c8;">
 <div id="initMask" style="background:url('images/loginBackground.jpg');z-index:1024;width:100%;height:100%;position:fixed;top:0;left:0;text-align:center;">
 	<script src="login.js"></script>
 	<div id="initLogin" class="form-sign-in" style="margin-top: 10em;color:white;">
@@ -94,6 +95,14 @@
 	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
     <div id="mask2" class="hover mask" onclick="ShowAddCommentBox(event)"></div>
     <div id="mask3" class="comhover mask" onclick="fadeComment()"></div>
+	<div id="mask4" class="comhover mask" onclick="commentReset()"></div>
+	<div id="mask5" class="comhover mask" onclick="commentReset()"></div>
+
+<!--comment templates here-->
+<div class="commentTemplate commentTemplate0">
+	Yes, this is fine
+</div>
+
 <!--edit modal-->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 	<div class="modal-dialog" role="document">
@@ -116,7 +125,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addContent()")">Submit</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick='addContent()')>Submit</button>
 			</div>
 		</div>
 	</div>
@@ -133,7 +142,7 @@
 	</div>
 	<div id="detailMask" class="hover"></div>
      
-	<div id="detailBox" class="hover jumbotron">
+	<div id="detailBox" class="hover jumbotron" style="padding: 0;">
        
 		<div id="detailData">
         <div id="detailpic">
