@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>main_page</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="jquery-2.1.4.js"></script>
+</head>
+<body>
+	<header>
+		<script src="events.js"></script>
+		<input name="search" id="searchBox" value="Search">
+		<a onClick="showRegBox()">register</a>
+		<a onClick="showLoginBox()">login</a>
+	</header>
+	<div id="loginBox" class="hover">
+		<form>
+			<p>用户名<input name="handle"/></p>
+			<p>密码&emsp;<input type="password" name="passwd"/></p>
+			<p><input type="button" value="Login!"/></p>
+		</form>
+	</div>
+	<div id="regBox" class="hover">
+		<form>
+			<p>用户名&emsp;<input name="handle"/></p>
+			<p>密码&emsp;&emsp;<input type="password" name="passwd"/></p>
+			<p>确认密码<input type="password" name="checkPass"/> </p>
+			<p><input type="button" value="Join Now!"/></p>
+		</form>
+	</div>
+	<div id="mask" class="hover mask" onClick="fadeAll()"></div>
+	<div id="contentContainer">
+		<div class="column">
+			<div class="contentBox s1" onClick="showDetail(this)"></div>
+			<div class="contentBox s3"></div>
+			<div class="contentBox s2"></div>
+		</div>
+		<div class="column">
+			<div class="contentBox s4"></div>
+			<div class="contentBox s2"></div>
+		</div>
+		<div class="column">
+			<div class="contentBox s1"></div>
+			<div class="contentBox s4"></div>
+			<div class="contentBox s2"></div>
+			<div class="contentBox s2"></div>
+		</div>
+		<div class="column">
+			<div class="contentBox s4"></div>
+		</div>
+		<div class="column">
+			<div class="contentBox s1"></div>
+			<div class="contentBox s2"></div>
+			<div class="contentBox s4"></div>
+			<div class="contentBox s1"></div>
+			<div class="contentBox s3"></div>
+		</div>
+		<img src="add.png" id="addButton" onClick="showAddBox()"/>
+	</div>
+	<div id="addBox" class="hover" style="width:700px;">
+		<form id="addForm">
+			<p><input type="file" name="pic"></p>
+			<script charset="utf-8" src="editor/kindeditor-all.js"></script>
+<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id');
+        });
+</script>
+			<p><textarea id="editor_id" name="content" style="width:650px;height:300px;">
+&lt;strong&gt;HTML内容&lt;/strong&gt;
+</textarea></p>
+			<p><input type="button" name="submit" value="submit"/></p>
+		</form>
+	</div>
+	<div id="detailMask" class="hover"></div>
+	<div id="detailBox" class="hover">
+		<div id="detailData"></div>
+	</div>
+	<img src="close.bmp" style="position:fixed;top:2em;right: 0;height: 2em;width: 2em;display: none;" id="close" class="hover mask" onClick="fadeAll()">
+</body>
+</html>
