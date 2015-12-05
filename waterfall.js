@@ -37,7 +37,10 @@ function resizeMain() {
         $("#detailBox").css("top",y+"px");
         $("#detailBox").css("left",150+"px");
         $("#detailBox").slideDown(1000);
+        $("#mask").fadeIn(100);
         $("#mask2").fadeIn(100);
+        $("#mask5").show();
+        commentFlag=true;
     })
 }
 
