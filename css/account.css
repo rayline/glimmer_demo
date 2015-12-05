@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'Nunito-Bold';
+    src:url(../fonts/Nunito-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src:url(../fonts/OpenSans-Regular.ttf) format('truetype');
+}
+
+
+h1,h2,h3,h4,h5,h6{
+	padding:0 0;
+	margin:0 0;
+}
+p{
+	padding:0 0;
+	margin:0 0;
+}
+ul{
+	padding:0 0;
+	margin:0 0;	
+}
+body{
+	padding:0 0;
+	margin:0 0; 
+	font-family: 'OpenSans-Regular';
+
+}
+.header-section {
+  width: 74%;
+  background: url("../images/bg.png");
+  background-position:center;
+  background-size:1600px;
+  text-align: center;
+  min-height: 400px;
+  margin-left: 13%;
+  margin-right: 13%;
+}
+.header-section img {
+  margin-top: 7em;
+}
+.header-section h1 {
+  font-family: 'Nunito-Bold';
+  font-size: 4em;
+  text-transform: capitalize;
+  color: #393b3a;
+  padding: 0.5em 0 0 0;
+}
+.header-section span {
+  color: #00cfbd;
+  font-size: 1em;
+}
+.header-section p {
+  font-family: 'Nunito-Bold';
+  font-size: 1.3em;
+  color: #393b3a;
+}
+
+.social-icons {
+	background:#fff;
+}
+.face p {
+  text-align: center;
+  font-size: 2.5em;
+  color: #FF0004;
+  font-weight: 500;
+  margin: 0 9px;
+ 
+}
+.face h2 {
+  font-size: 1.3em;
+  color: #393b3a;
+  font-weight: 800;
+  text-transform: capitalize;
+  margin-top: 0.1em;
+  cursor: pointer;
+  text-align: center;
+}
+.mid-border {
+	margin-left: 13%;
+	margin-right: 13%;
+	width: 76%;
+	background-color: red;
+	margin-top: 5px;
+	height: 2px;
+}
+
+
+/*-- responsive-design --*/
+@media only screen and (max-width:1024px) {
+.header-section h1 {
+   font-size: 3em;
+ }
+.header-section p {
+	font-size: 1.2em;
+}
+ .face p {
+  font-size: 2.5em;
+ }
+ .face h4 {
+    margin-top: 2em;
+}
+
+}
+@media only screen and (max-width: 768px){
+.header-section {
+   min-height: 472px;
+}
+.header-section h1 {
+  font-size: 2.5em;
+}
+.header-section p {
+  font-size: 1.1em;
+}
+span.glyphicon.glyphicon-triangle-bottom {
+  font-size: 1.5em;
+}
+.social-icons {
+   padding: 3em 0;
+  }
+.social-icons h3 {
+  font-size: 1.6em;
+    margin-bottom: 1.5em;
+}
+.face {
+  width: 25%;
+}
+.face p {
+  font-size: 2em;
+  margin: 0 1px;
+}
+.face h4 {
+  margin-top: 2.5em;
+}
+}
+@media only screen and (max-width: 640px){
+.header-section img {
+  margin-top: 5em;
+}
+.header-section {
+  min-height: 430px;
+}
+.header-section h1 {
+  font-size: 2em;
+}
+.header-section p {
+  font-size: 1.05em;
+}
+.social-icons h2 {
+	text-align: center;
+}
+.social-icons h3 {
+  font-size: 1.5em;
+}
+.face p {
+  font-size: 1.5em;
+  margin: 0 1px;
+}
+}
+@media only screen and (max-width: 480px){
+.header-section img {
+  margin-top: 5em;
+  width: 30%;
+}
+.header-section {
+  min-height: 345px;
+}
+.header-section h1 {
+  font-size: 1.5em;
+}
+span.glyphicon.glyphicon-triangle-bottom {
+  font-size: 1.3em;
+}
+.header-section p {
+  font-size: 1em;
+}
+.social-icons h3 {
+  font-size: 1.3em;
+   margin-bottom: 1em;
+}
+.face p {
+  font-size: 1.3em;
+  text-align: center;
+}
+ 
+.face h2 {
+  margin-top: 1em;
+  font-size: 9px;
+  line-height: 1.5em;
+}
+.social-icons {
+  padding: 2em 0;
+}
+
+}
+@media only screen and (max-width: 320px){
+.header-section img {
+  margin-top: 4em;
+  width: 40%;
+}
+.header-section h1 {
+  font-size: 1.8em;
+}
+span.glyphicon.glyphicon-triangle-bottom {
+  font-size: 1em;
+}
+.header-section {
+  min-height: 300px;
+}
+
+.social-icons h3 {
+  font-size: 1.5em;
+ 
+}
+.face {
+  float: left;
+  text-align: center;
+  width: 25%;
+  padding: 0;
+}
