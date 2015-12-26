@@ -5,143 +5,119 @@
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/account.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-		<div class="header" style="z-index: 999;">
-	<div class="header_top">
-		<div class="container">
-			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" height="40" alt=""/></a>
+		<header class="navbar navbar-default navbar-fixed-top" style="z-index: 999; height:60px;">
+	<div class="container-fluid" style="height:60px;">
+		<div class="navbar-header " style="width:100%;height:60px;">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/油饼1.png" style="margin-left:4em;alt="Glimmer margin-bottom:10px;" height="100%" style="position: relative; bottom: 30%;">
+			</a>
+			<input type="text" class="form-control navbar-form navbar-left" placeholder="search" id="searchInput" size="30" style="margin-left: 0% background-color:#E9E9E9;"; autocomplete="off"/>
+			<button class="btn btn-default navbar-btn navbar-left"  onclick="applySearch()"><img src="images/油饼-2.png" height="28px"></button>
+		<a href="account.html">
+        <button class="btn account">
+        	<img src="images/我的头像.png" height="30px">
+            Crazy_boy
+        </button>
+        </a>
 			</div>
-			<ul class="shopping_grid">
-			      <li>Join Us</li>
-			      <li onclick="showLoginBox()">Sign In</li>
-			      <li><span class="m_1"><a href="account.html">My Account</a></span>&nbsp;&nbsp;</li>
-			      <div class="clearfix"> </div>
-			</ul>
 		</div>
 	</div>
+</header>
+<div class="header-section">
+    <div class="continer" align="center">
+         <img src="images/我的头像.png" height="180px">						
+        <h1 align="center">
+            <font color="#FFFFFF">Crazy_boy</font><span></span>
+        </h1>
+        <p><font color="#FFFFFF">Come and join me</font></p>
+    </div>
+    <div class="continer" align="center"></div>
 </div>
-		<div class="header-section">
-			<div class="continer" align="center">
-				<img src="images/face.png">						
-                <h1 align="center"><font color="#FFFFFF">Joseph</font><span></span></h1>
-				<p><font color="#FFFFFF">Come and join me</font></p>
-			</div>
-            <div class="continer" align="center">
-            </div>
-		</div>
-        <div class="social-icons" align="center">
-			<div class="container">
-						<div class="col-md-3 face">
-					<p> 21k</p>
-						<h2 align="center">Status</h2>
-							</div>
-								<div class="col-md-3 face col-lg-offset-0">
-						<p> 470</p>
-						<h2 align="center">followings</h2>
-						</div>
-							<div class="col-md-3 face">
-						<p>412k</p>
-						<h2 align="center">Followers</h2>
-						</div>
-						<div class="col-md-3 face">
-						<p>322k</p>
-						<h2 align="center">Likes</h2>
-						</div>
-                    </div>
-         </div>
-         <div class="mid-border"></div>
-		<div class="clearfix"> </div>
-		<div id="columnContainer" style="margin-left: 20%;">
-        	<div class="column column1">
-            	<img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-            </div>
-            <div class="column column2">
-            	<img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-            </div>
-            <div class="column column3">
-            	<img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-            </div>
-            <div class="column column4">
-            	<img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-            </div>
-            <div class="column column5">
-            	<img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-            </div>
-            <div class="column column6">
-            	<img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-            </div>
-            <div class="column column7">
-            	<img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/xyz.jpg" width="100%" height="250px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-                <img src="images/dbw.jpg" width="100%" height="370px" class="insideImg">
-                <img src="images/szt.jpg" width="100%" height="300px" class="insideImg">
-            </div>
+<div class="social-icons" align="center">
+    <div class="container">
+        <div class="col-md-3 face">
+            <p> 21k</p>
+				<h2 align="center">Status</h2>
         </div>
+        <div class="col-md-3 face col-lg-offset-0">
+            <p> 470</p>
+            <h2 align="center">followings</h2>
+        </div>
+        <div class="col-md-3 face">
+            <p>412k</p>
+            <h2 align="center">Followers</h2>
+        </div>
+        <div class="col-md-3 face">
+            <p>322k</p>
+            <h2 align="center">Likes</h2>
+        </div>
+    </div>
+</div>
+<div class="mid-border"></div>
+<div class="clearfix"> </div>
+<div id="columnContainer">
+	<div class="column columnx">
+                <img src="images/pictures_for_homework/animals/cats/10-cat-animal.jpg" width="100%" class="insideImg">
+            	<img src="images/pictures_for_homework/1-emoji.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/3-goose-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/1-dog-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/1-white-tiger-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/front_page/1-picture-ancient.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/front_page/26-Harry-Potter.jpg" width="100%" class="insideImg">
+    </div>
+    <div class="column columnx">
+                <img src="images/pictures_for_homework/animals/cats/44-cat-animal.jpg" width="100%" class="insideImg">
+            	<img src="images/pictures_for_homework/front_page/26-Harry-Potter.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/front_page/12-brave-tree.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/2-wolf-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/front_page/2-picture-ancient.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/a_tree_equel_forest.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/desert.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/flower.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/little_drawing.jpg" width="100%" class="insideImg">
+    </div>
+    <div class="column columnx">
+                <img src="images/pictures_for_homework/animals/3-dog-animal.jpg" width="100%" class="insideImg">
+            	<img src="images/pictures_for_homework/my_photos/blue-sky1.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/cafe-in_small_town.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/psb%20(2).jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/choklate-food.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/cats/11-cat-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/4-goose-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/lavender.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/front_page/14-black-tiger.jpg" width="100%" class="insideImg">
+                <img src="images/dbw.jpg" width="100%" class="insideImg">
+                <img src="images/szt.jpg" width="100%" class="insideImg">
+    </div>
+    <div class="column columnx">
+                <img src="images/pictures_for_homework/animals/cats/15-cat-animal.jpg" width="100%" class="insideImg">
+            	<img src="images/pictures_for_homework/my_photos/snow_mountains.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/blue-sky3.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/1-emoji.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/salt_lake.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/cats/21-cat-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/cats/47-cat-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/cats/24-cat-animal.jpg-cat-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/tree_in_BUAA.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/blue-sky2.jpg" width="100%" class="insideImg">
+                <img src="images/xyz.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/ISAAC.JPG" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/P50823-182951-001.jpg" width="100%" class="insideImg">
+    </div>
+    <div class="column columnx">
+    	 <img src="images/pictures_for_homework/animals/cats/47-cat-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/animals/cats/24-cat-animal.jpg-cat-animal.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/tree_in_BUAA.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/blue-sky2.jpg" width="100%" class="insideImg">
+                <img src="images/xyz.jpg" width="100%" class="insideImg">
+                <img src="images/pictures_for_homework/my_photos/ISAAC.JPG" width="100%" class="insideImg">
+    </div>
+</div>
 							
 </body>
 </html> 

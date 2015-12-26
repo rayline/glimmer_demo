@@ -8,10 +8,6 @@ function pxtonum(s){
 	return parseInt(s);
 }
 
-function showLoginBox(){
-    $("#loginBox").show(1000);
-    $("#mask").fadeIn(1000);
-}
 function fadeAll(){
     $(".mask").fadeOut(1000);
     $(".hover").hide(1000);
@@ -19,6 +15,10 @@ function fadeAll(){
 }
 function fadeComment(){
 	$("#mask3").fadeOut();
+	$(".comhover").slideUp();
+	}
+function fadeComment2(){
+	$("#mask7").fadeOut();
 	$(".comhover").slideUp();
 	}
 function showRegBox(){
@@ -52,7 +52,7 @@ function addContent(){
 	$(".column1 .insideImg").animate({
 		top : "+=130"
 	},400);
-	$(".column1").prepend("<div class='insideImg' id='toShow' style='display: none' height='150px'><img src="+ file +" width='100%' height='100px'>"+ $("#message-text").val()+"</div>");
+	$(".column1").prepend("<div class='content-pic'><img src='"+file+"' width='100%' class='pic-thumbnail insideImg'><div class='pic-intro'>"+ $("#message-text").val() +"</div></div>");
 	$("#toShow").fadeIn({
 		duration : 600,
 		queue : true
@@ -78,7 +78,18 @@ function ShowAddCommentBox(event){
 	}
 	if (x>=divleft+divlen){
 		fadeAll();
+		fadeComment();
+		$(".comment").fadeOut();
 	}
+}
+function ShowAddCommentBox2(event){
+	var x=event.clientX+document.body.scrollLeft,y=event.clientY+document.body.scrollTop;
+	
+		CommentNum=CommentNum+1;
+		CreateComment(x,y);
+		$("#CommentBox").slideDown();
+		$("#mask7").fadeIn();
+	
 }
 function CreateComment(x,y){
 	var idname="comment"+CommentNum;
@@ -106,9 +117,6 @@ $(document).ready(function(){
 	$(function () {
 		$('[data-toggle="popover"]').popover()
 	});
-});
-
-function startmain(){
 
 	resizeMain();
 	$("#searchInput").on("blur",function(){$(".hint").remove()});
@@ -116,6 +124,9 @@ function startmain(){
 	$("#searchInput").on("change keyup paste",function(){
 		addHint(this);
 	});
+});
+
+function startmain(){
 }
 
 $(window).resize(function(){
@@ -131,9 +142,12 @@ var running = false;
 var commented = 0;
 
 //todo: change commentCnt if more comments are added
-commentCnt = 1;
+commentCnt = 8;
 
 $(window).scroll(function(){
+	if($(window).height()+$(window).scrollTop()-commented<=300){
+		$("#mask6").fadeOut();
+		}
     $(".column").each(function(index, element){
         while($(element).height()+$(element).offset().top<$(document).scrollTop()+document.documentElement.clientHeight){
 			rd = Math.floor(Math.random()*searchResult.length);
@@ -146,15 +160,16 @@ $(window).scroll(function(){
 		$("#detailBox").css("top",y+"px").css("left",150+"px").slideDown(1000);
 		$("#mask").fadeIn(100);
 		$("#mask2").fadeIn(100);
+		$("#mask8").fadeIn(100);
 		$("#mask5").show();
 		commentFlag=true;
 	});
 	if(commentFlag){
-		if(commented==0)commented = $("#detailBox").offset().top+$("#detailBox").height();
-		if(!running&&(t==0||(new Date()).getTime()-t<=500&&$("#detailBox").offset().top+$("#detailBox").height()<$(window).height()+$(window).scrollTop())){
+		if(commented==0)commented = $("#detailBox").offset().top+$("#detailBox").height()+pxtonum($("#detailBox").css("margin-bottom"))+40;
+		if(!running&&(t==0||(new Date()).getTime()-t<=500&&$("#detailBox").offset().top+$("#detailBox").height()+pxtonum($("#detailBox").css("margin-bottom"))<$(window).height()+$(window).scrollTop())){
 			running = true;
 			$("body,html,document").animate({
-				scrollTop:$("#detailBox").offset().top+$("#detailBox").height()-$(window).height()
+				scrollTop:$("#detailBox").offset().top+$("#detailBox").height()+pxtonum($("#detailBox").css("margin-bottom"))-$(window).height()+pxtonum($("#detailBox").css("margin-bottom"))+40
 			},300,"swing",function(){Mored = true;running = false;});
 			if(!readyForMore){
 				var d = new Date();
@@ -162,23 +177,28 @@ $(window).scroll(function(){
 			}
 			readyForMore = true;
 			//TODO: add a bottom banner showing "scroll down to see more comments"
+			$("#suggest").slideDown(1000);
 		}else{
-			if(!running&&!Mored&&$("#detailBox").offset().top+$("#detailBox").height()<$(window).height()+$(window).scrollTop()){
+			if(!running&&!Mored&&$("#detailBox").offset().top+$("#detailBox").height()+pxtonum($("#detailBox").css("margin-bottom"))<$(window).height()+$(window).scrollTop()){
 				running = true;
 				$("body,html,document").animate({
-					scrollTop:$("#detailBox").offset().top+$("#detailBox").height()+20
+					scrollTop:$("#detailBox").offset().top+$("#detailBox").height()+pxtonum($("#detailBox").css("margin-bottom"))+20
 				},500,"swing",function(){Mored = true;running = false;});
 			}
-			if(!running&&Mored&&$("#detailBox").offset().top+$("#detailBox").height()>$(window).scrollTop()){
+			if(!running&&Mored&&$("#detailBox").offset().top+$("#detailBox").height()+pxtonum($("#detailBox").css("margin-bottom"))>$(window).scrollTop()){
 				running = true;
 				console.log("fire");
 				$("body,html,document").animate({
-					scrollTop :$("#detailBox").offset().top+$("#detailBox").height()-$(window).height()-20
+					scrollTop :$("#detailBox").offset().top+$("#detailBox").height()+pxtonum($("#detailBox").css("margin-bottom"))-$(window).height()-20
 				},500,"swing",function(){Mored = false;running = false;});
 			}
 		}
 		console.log($(window).height()+$(window).scrollTop(),commented);
 		if(!running&&$(window).height()+$(window).scrollTop()-commented>300){
+			
+			$("#suggest").fadeOut(10);
+			$("#mask6").fadeIn();
+			
 			running = true;
 			console.log("firing!");
 			blank = $(window).height()+$(window).scrollTop()-commented;
@@ -192,7 +212,7 @@ $(window).scroll(function(){
 			for(i=1;i<=blank/70;i++){
 				rd = Math.random();
 				rd = Math.floor(Math.random() * commentCnt);
-				$(".commentTemplate"+rd).clone().removeClass("commentTemplate"+rd).addClass("comment extraComment").css("top",Math.random()*blank+(hei-blank)+top).css("left",Math.random()*(wid-$(".commentTemplate"+rd).width())).appendTo("body").fadeIn();
+				$(".commentTemplate"+rd).clone().removeClass("commentTemplate"+rd).addClass("comment extraComment hover").css("top",Math.random()*blank+(hei-blank)+top).css("left",Math.random()*(wid-$(".commentTemplate"+rd).width())).appendTo("body").fadeIn();
 			}
 			running = false;
 		}

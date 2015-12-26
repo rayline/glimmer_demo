@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>main_page</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="contextMenu/jquery.contextMenu.css">
+	<script src="jquery-2.1.4.js"></script>
+	<script src="waterfall.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+    <script src="events.js"></script>
+    <title>Home</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <!--<link href="css/style.css" rel="stylesheet" type="text/css" />   no using for reasons-->
+    <!-- Custom Theme files -->
+    <!--webfont-->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="contextMenu/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="contextMenu/jquery.contextMenu.js"></script>
+</head>
+<body style="background: #c8c8c8;">
+<div id="initMask" style="background:url('images/loginBackground.jpg');z-index:1024;width:100%;height:100%;position:fixed;top:0;left:0;text-align:center;">
+	<script src="login.js"></script>
+	<div id="initLogin" class="form-sign-in login-font" style="margin-top: 10em;">
+
+	<h1>Enter Glimmer</h1>
+	<h3>
+		Login if you have an account.
+	</h3>
+	<h3>
+		Or just type the desired account below.
+	</h3>
+	<form>
+		<input type="email" id="email-a" class="dbw_form" placeholder="Email" onfocus="if(value=='Email'){this.style.color='#fff';value=''}" onblur="if(value==''){this.style.color='#999';value='Email'}" ><br /><br/>
+		<input type="password" id="pass-a" class="dbw_form" placeholder="password" onfocus="if(value=='password'){this.style.color='#fff';value=''}" onblur="if(value==''){this.style.color='#999';value='password'}"><br/><br/>
+		<button id="input_01" type="button" class="btn btn-primary" onclick="tryLogin()">Enter</button>
+	</form>
+	</div>
+	<div id="secondLogin" style="display: none">
+        <div class="login_title login-font">Wlecome to Glimmer</div>
+		<div class="form-sign-in login-font login-textbox" style="width:70%;">
+			<span style="float: left;width:50%;">
+                <h3>For the First Time to Glimmer</h3>
+				<h3>Please Input Your Password Again</h3>
+				<input id="pass-b" type="password" placeholder="Confirm Password" class="form-control login-textbox" style="width:50%;">
+                
+				<button class="btn btn-default login-textbox" type="button" style="float:right;" onclick="register()">Confirm</button>
+			</span>
+			<span style="float:right;width:30%">
+				<h3>Maybe You had Input A Wrong Password</h3>
+				<h3>Please Try Again</h3>
+				<form>
+					<input type="email" id="email-b" class="form-control login-textbox" placeholder="Email">
+					<input type="password" id="pass-c" class="form-control login-textbox" placeholder="password">
+					<button type="button" class="btn btn-primary login-textbox" onclick="tryLogin()">Enter</button>
+				</form>
+			</span>
+		</div>
+	</div>
+</div>
+<!--Message modal-->
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: 15%;">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">已发送验证邮件！</h4>
+			</div>
+			<div class="modal-body">
+				我们已经将验证邮件发送到您的信箱中。您可以先浏览我们的网站而过一会完成注册。本账号验证前可使用24小时。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">知道了</button>
+			</div>
+		</div>
+	</div>
+</div>
+<header class="navbar navbar-default navbar-fixed-top" style="z-index: 999;">
+	<div class="container-fluid">
+		<div class="navbar-header" style="width:100%;">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/logo.png" alt="Glimmer" height="200%" style="position: relative; bottom: 30%;">
+			</a>
+			<input type="text" class="form-control navbar-form navbar-left" placeholder="search" id="searchInput" size="40" style="margin-left: 10%" autocomplete="off"/>
+			<button class="btn btn-default navbar-btn navbar-left"  onclick="applySearch()">Search</button>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="account.html" id="account">Account <span class="sr-only">(current)</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+	<div id="mask" class="hover mask" onclick="fadeAll()"></div>
+    <div id="mask2" class="hover mask" onclick="ShowAddCommentBox(event)"></div>
+    <div id="mask3" class="comhover mask" onclick="fadeComment()"></div>
+	<div id="mask4" class="comhover mask" onclick="commentReset()"></div>
+	<div id="mask5" class="comhover mask" onclick="commentReset()"></div>
+
+<!--comment templates here-->
+<div class="commentTemplate commentTemplate0">
+	Yes, this is fine
+</div>
+
+<!--edit modal-->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="pictureupload" class="control-label">Your Picture:</label>
+						<img src="close.png" id="pic" style="display: none;">
+						<input type="file" class="form-control" id="pictureupload" onchange="upload();">
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="control-label">Your words</label>
+						<textarea class="form-control" id="message-text"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick='addContent()')>Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+<img src="add.png" style="position: fixed; bottom: 2em;right: 2em; height: 4em; width: 4em; border-radius: 100%;" onclick="$('#editModal').modal();">
+
+<div id="columnContainer"></div>
+	<div id="addBox" class="hover">
+		<form id="addForm">
+			<p><input type="file" name="pic"></p>
+			<p><textarea name="texts" form="addForm"></textarea></p>
+			<p><input type="button" name="submit" value="submit" /></p>
+		</form>
+	</div>
+	<div id="detailMask" class="hover"></div>
+     
+	<div id="detailBox" class="hover jumbotron" style="padding: 0;">
+       
+		<div id="detailData">
+        <div id="detailpic">
+        <img  src="images/dbw.jpg"></div>
+        <h1>仰哲兄好帅</h1>
+        </div>
+	</div>
+    <div id="CommentBox" class="comhover" >
+      <div id="commentbox_text">
+       <textarea rows="10" cols="30" id="comment">
+       </textarea>
+       </div>
+       <div id="commentbox_button">
+       <input type="submit" value="提交评论" onclick="ShowComment()">
+       </div>
+    </div>
+	<img src="close.png" style="position:fixed;top:2em;right: 0;height: 2em;width: 2em;display: none;" id="close" class="hover mask" onclick="fadeAll()">
+</body>
+</html>

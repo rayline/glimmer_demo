@@ -1,0 +1,26 @@
+.content-pic {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 100%;
+	height: auto;
+}
+
+.pic-thumbnail {
+	width: 100%;
+	height: auto;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.pic-intro {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	height: auto;
+	background-color: white;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	text-align: center;
+	font-family: 黑体;
+	font-size: 1.5em;
+}
