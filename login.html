@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>login</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script src="jquery-2.1.4.js"></script>
+	<link rel="stylesheet" href="index.css" />
+	<link rel="stylesheet" href="login&register.css" />
+</head>
+
+<body>
+	<script type="text/javascript" src="loginRegister.js"></script>
+	<div id="div_all" class="container">
+		<div class="row">
+			<img src="images/logo_yellow.png" class="small_logo" />
+		</div>
+		<div class="row login_title">欢迎来到Glimmer</div>
+		<div class="col-xs-offset-3 col-xs-9 login-font">
+			<img src="images/small-logo.png" class="sslogo" />请输入账号及密码，开启您的微光之旅。
+		</div>
+		<div class="col-xs-offset-3 col-xs-4">
+			<form onsubmit="login()">
+				<div id="emailWarn" class="login-font btn-block">
+					账号
+				</div>
+				<input id="loginEmail" class="dbw_form btn-block" type="text" placeholder="  Email" />
+				<div id="passwdWarn" class="login-font btn-block">
+					密码
+				</div>
+				<input id="loginPasswd" class="dbw_form btn-block" type="password" placeholder="  Password" />
+				<div class="row">
+					<div class="col-xs-5">
+						<button type="submit" class="button_font btn btn-block">
+							<img src="images/small-logo.png" class="sslogo" /> 确认
+						</button>
+					</div>
+					<div class="col-xs-offset-2 col-xs-5">
+						<button class="button_font button btn btn-block">
+							<img src="images/small-logo.png" class="sslogo" onclick="toRegister();" /> 注册
+						</button>
+					</div>
+
+
+				</div>
+			</form>
+
+		</div>
+	</div>
+</body>
+
+</html>

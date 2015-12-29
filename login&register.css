@@ -1,0 +1,50 @@
+body{
+    background-image: url(images/loginBackground.jpg);
+}
+#log_in{
+    padding-top: 1em;
+    margin-left: 23em;
+    margin-right: 15em;
+}
+.small_logo{
+    width: 10em;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.login-font{
+    color:rgb(232, 201, 31);
+    font-weight:400 bold;
+    font-size: 1.7em;
+}
+.small_div{
+    height: 2em;
+    line-height: 2em;
+}
+.box{
+    height: 2em;
+    border-radius: 0.4em;
+    width: 25em;
+}
+.button_font{
+    margin-top: 0.5em;
+    color: rgb(232, 201, 31);
+    font-size: 1.5em;
+}
+.sslogo{
+    height: 1.3em;
+}
+.button{
+    margin-right: 2em;
+    border-radius: 0.3em;
+}
+.mask-white{
+	background-color: rgba(245, 245, 245, 0.26);
+}
+.shadowbox {
+    padding: 19px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    border-radius: 3px;
+    border: 0px;
+}
