@@ -1,7 +1,5 @@
-#div_all{
+body{
     background-image: url(images/loginBackground.jpg);
-    width: 100%;
-    height: 100%;
 }
 #log_in{
     padding-top: 1em;
@@ -38,4 +36,15 @@
 .button{
     margin-right: 2em;
     border-radius: 0.3em;
+}
+.mask-white{
+	background-color: rgba(245, 245, 245, 0.26);
+}
+.shadowbox {
+    padding: 19px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    border-radius: 3px;
+    border: 0px;
 }
